@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Predict Flight Price</title>
+  
+</head>
+
+<body style="background: #d4a0ec;">
+ <div class="login">
+	<h1 style="color:rgb(242, 247, 167);">Flight Price Predictor</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+  <form action="{{url_for('predict')}}" method="post">
+    <input type="text" name="airline" placeholder="Airline Name" required="required" /><br>
+    <input type="text" name="source_city" placeholder="Source City" required="required" /><br>
+    <input type="text" name="departure_time" placeholder="Departure Time" required="required" /><br>
+    <input type="number" name="stops" placeholder="Number of Stops" required="required" /><br>
+    <input type="text" name="arrival_time" placeholder="Arrival Time" required="required" /><br>
+    <input type="text" name="destination_city" placeholder="Destination City" required="required" /><br>
+    <input type="text" name="class" placeholder="Class (Economy/Business)" required="required" /><br>
+    <input type="number" name="duration" placeholder="Duration (minutes)" required="required" /><br>
+    <input type="number" name="days_left" placeholder="Days Left" required="required" /><br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict Flight Price</button>
+  </form>
+
+   <br>
+   <br>
+   <h4 style="color:rgb(6, 26, 114);">
+   {{ prediction_text }} </h4>
+
+ </div>
+
+
+</body>
+</html>
